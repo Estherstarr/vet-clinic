@@ -9,10 +9,21 @@ neutered boolean,
 weight_kg decimal
 );
 
-ALTER TABLE animals
-ADD COLUMN species text;
+-- Table named owners with the following columns
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY,
+    fullname CHAR(200),
+    age int
+);
 
+-- table named species with the following columns
+CREATE TABLE species (
+    id SERIAL PRIMARY KEY,
+    name CHAR(200)
+);
 
+-- ID is set as autoincremented PRIMARY KEY
+ALTER TABLE animals ADD PRIMARY KEY (id);
 -- Remove column species
 ALTER TABLE animals DROP COLUMN species
 -- species field column
